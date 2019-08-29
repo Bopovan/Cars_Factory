@@ -7,25 +7,20 @@ public class Cars {
     int weigth;
     boolean crashed;
     int gasTankCapacity;
-    double engine;
 
-    public static class Engine {
-        boolean hybryd;
-        int strong;
-        int horsepower;
-        double fuelConsumption;
+    Engine engine = new Engine(false, 78, 114, 16);
 
 
-        public void consumption(double distance) {
-            double result = (distance / 100) * fuelConsumption;
-            System.out.println("Расход топлива на " + distance + " состваил " + result);
-        }
-
+    public void consumption(double distance) {
+        double result = (distance / 100) * engine.fuelConsumption;
+        System.out.println("Расход топлива на " + distance + " км " + " составил " + result);
     }
+
 
     public void hornUse() {
         System.out.println("БИИИИИИП");
     }
+
 
 
     public static void main(String[] args) {
@@ -35,18 +30,13 @@ public class Cars {
         firstCar.model = "Albea";
         firstCar.weigth = 1700;
 
-        Engine firstCarEngine = new Engine();
-        firstCarEngine.hybryd = false;
-        firstCarEngine.horsepower = 77;
-        firstCarEngine.fuelConsumption = 8.7;
+        Engine engine = new Engine(false, 115, 77, 11);
+
 
         firstCar.hornUse();
-        firstCarEngine.consumption(20);
+        firstCar.consumption(23);
 
-        Cars secondCar = new Cars();
-        secondCar.mark = "Toyota";
-        secondCar.model = "Prado";
-        secondCar.weigth = 2300;
+
 
     }
 }
