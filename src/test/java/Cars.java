@@ -30,9 +30,6 @@ public class Cars {
         firstCar.model = "Albea";
         firstCar.weigth = 1700;
 
-        Engine engine = new Engine(false, 115, 77, 11);
-
-
         firstCar.hornUse();
         firstCar.consumption(23);
 
